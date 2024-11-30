@@ -30,11 +30,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Print current directory
-        run: pwd  # Verifikasi apakah di direktori yang benar
-
-      - name: List files
-        run: ls -la  # Memeriksa file di direktori saat ini
+      - name: List files in current directory
+        run: ls -la  # Menampilkan daftar file untuk memverifikasi apakah test_app.py ada
 
       - name: Run tests
         run: |
