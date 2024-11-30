@@ -61,19 +61,24 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          docker build -t davidbaridji/my-app .  # Build Docker image with the correct name
+          docker build -t my-app .  # Build the Docker image
+
+      # List Docker images to verify the image was built
+      - name: List Docker images
+        run: |
+          docker images  # Ensure that "my-app" image exists
 
       # Save Docker image as tar file
       - name: Save Docker image as tar
         run: |
-          docker save davidbaridji/my-app -o my-app.tar  # Save the Docker image as a tar file
+          docker save my-app -o my-app.tar  # Save image to tar file
 
       # Upload Docker image as Artifact
       - name: Upload Docker Image as Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: my-app-image  # Artifact name
-          path: my-app.tar  # Path to the tar file
+          name: my-app-image
+          path: my-app.tar
 
       # Log in to DockerHub (using your DockerHub credentials)
       - name: Log in to DockerHub
@@ -85,8 +90,8 @@ jobs:
       # Push Docker image to DockerHub
       - name: Push Docker image
         run: |
-          docker tag my-app davidbaridji/my-app:latest
-          docker push davidbaridji/my-app:latest
+          docker tag my-app davidbaridji/my-app:latest  # Tag the image for DockerHub
+          docker push davidbaridji/my-app:latest  # Push to DockerHub
 
       # Deploy Docker container (run the container on the server)
       - name: Run Docker container
