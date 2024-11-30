@@ -1,0 +1,143 @@
+/* Reset margin dan padding pada seluruh halaman */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1e1e2f; /* Dark background untuk tampilan futuristik */
+    color: #fff;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Container Utama */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #2b2b3d; /* Dark card background */
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    text-align: center;
+}
+
+/* Judul */
+h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Status Kesehatan */
+.status {
+    background-color: #3b3b52;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.status h2 {
+    color: #2196F3; /* Biru terang untuk menonjolkan status */
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Ikon untuk status kesehatan */
+.status .icon {
+    font-size: 40px;
+    color: #4CAF50; /* Ikon warna hijau */
+    margin-bottom: 20px;
+}
+
+/* Efek hover pada status */
+.status:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Metrics Section */
+.metrics {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Setiap kartu metrik */
+.metric {
+    background-color: #2b2b3d;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 22%;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #6a1b9a, #8e24aa); /* Gradien untuk kartu */
+    color: #fff;
+}
+
+.metric h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.metric .metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 15px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Menambahkan shadow pada teks */
+}
+
+/* Efek hover pada metrik */
+.metric:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .metrics {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .metric {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .metric {
+        width: 90%;
+    }
+
+    .status {
+        padding: 25px;
+    }
+}
