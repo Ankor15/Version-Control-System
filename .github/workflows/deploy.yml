@@ -43,7 +43,7 @@ jobs:
       # Run tests
       - name: Run tests
         run: |
-          pytest test_ap.py
+          pytest test_app.py
 
   # Deploy to Docker
   deploy:
